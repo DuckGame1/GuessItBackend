@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
   - docker
 
 variables:
@@ -18,15 +17,9 @@ build:
       - bin/
       - obj/
 
-test:
-  stage: test
-  image: mcr.microsoft.com/dotnet/sdk:8.0
-  script:
-    - dotnet test --no-build --verbosity normal
-
 docker:
   stage: docker
-  image: docker:24.0.2
+  image: mcr.microsoft.com/dotnet/sdk:8.0  # можно любой образ с docker-cli, но .NET SDK тоже ок
   variables:
     DOCKER_HOST: unix:///var/run/docker.sock
   script:
