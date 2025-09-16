@@ -1,0 +1,39 @@
+stages:
+  - build
+  - test
+  - publish
+
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "1"
+  BUILD_CONFIGURATION: "Release"
+
+before_script:
+  - 'echo "Using .NET version:"'
+  - 'dotnet --version'
+
+build:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  script:
+    - dotnet restore
+    - dotnet build --configuration $BUILD_CONFIGURATION
+  artifacts:
+    paths:
+      - bin/
+      - obj/
+
+test:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  script:
+    - dotnet test --no-build --verbosity normal
+
+publish:
+  stage: publish
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  script:
+    - dotnet publish -c $BUILD_CONFIGURATION -o publish/
+  artifacts:
+    paths:
+      - publish/
