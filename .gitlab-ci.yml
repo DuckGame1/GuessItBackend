@@ -1,23 +1,18 @@
 stages:
   - build
   - test
-  - publish
+  - docker
 
 variables:
-  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: "1"
   BUILD_CONFIGURATION: "Release"
-
-before_script:
-  - 'echo "Using .NET version:"'
-  - 'dotnet --version'
+  IMAGE_NAME: "guessitapi"
 
 build:
   stage: build
   image: mcr.microsoft.com/dotnet/sdk:8.0
   script:
     - dotnet restore
-    - dotnet build --configuration $BUILD_CONFIGURATION
+    - dotnet build -c $BUILD_CONFIGURATION
   artifacts:
     paths:
       - bin/
@@ -29,11 +24,23 @@ test:
   script:
     - dotnet test --no-build --verbosity normal
 
-publish:
-  stage: publish
-  image: mcr.microsoft.com/dotnet/sdk:8.0
+docker:
+  stage: docker
+  image: docker:24.0.2
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
   script:
-    - dotnet publish -c $BUILD_CONFIGURATION -o publish/
-  artifacts:
-    paths:
-      - publish/
+    # логинимся в Docker, если нужно
+    # - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+    - docker build -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
+    - docker stop guessitapi || true
+    - docker rm guessitapi || true
+    - docker run -d \
+        --name guessitapi \
+        --network proxy \
+        -e VIRTUAL_HOST=guessitapi.antishelkon.ru \
+        -e LETSENCRYPT_HOST=guessitapi.antishelkon.ru \
+        $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
