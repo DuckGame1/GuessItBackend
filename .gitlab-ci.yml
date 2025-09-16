@@ -7,6 +7,8 @@ variables:
   BUILD_CONFIGURATION: "Release"
   IMAGE_NAME: "guessitapi"
 
+# -----------------------------
+# Сборка проекта
 build:
   stage: build
   image: mcr.microsoft.com/dotnet/sdk:8.0
@@ -18,29 +20,35 @@ build:
       - bin/
       - obj/
 
+# -----------------------------
+# Тесты
 test:
   stage: test
   image: mcr.microsoft.com/dotnet/sdk:8.0
   script:
     - dotnet test --no-build --verbosity normal
 
+# -----------------------------
+# Сборка и запуск Docker
 docker:
   stage: docker
   image: docker:24.0.2
-  services:
-    - docker:dind
-  variables:
-    DOCKER_HOST: tcp://docker:2375
-    DOCKER_DRIVER: overlay2
   script:
-    # логинимся в Docker, если нужно
-    # - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+    # Собираем Docker образ
     - docker build -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA .
+
+    # Останавливаем старый контейнер (если есть)
     - docker stop guessitapi || true
     - docker rm guessitapi || true
+
+    # Запускаем новый контейнер в сети proxy с VIRTUAL_HOST
     - docker run -d \
         --name guessitapi \
         --network proxy \
         -e VIRTUAL_HOST=guessitapi.antishelkon.ru \
         -e LETSENCRYPT_HOST=guessitapi.antishelkon.ru \
         $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+
+  variables:
+    # Используем Docker socket хоста вместо DinD
+    DOCKER_HOST: unix:///var/run/docker.sock
