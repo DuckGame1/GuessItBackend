@@ -1,0 +1,1598 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GuessIt API",
+    "version": "v1"
+  },
+  "paths": {
+    "/giapi/auth/delete": {
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Удаление текущего пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/delete/{username}": {
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Удаление пользователя по имени (только для администраторов).",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Имя пользователя для удаления.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/deleteauth": {
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Удаление текущей авторизации пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/deleteavatar": {
+      "delete": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Удаление аватара текущего пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/card/delete": {
+      "delete": {
+        "tags": [
+          "Card"
+        ],
+        "summary": "Удалить карту",
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "query",
+            "description": "Id карты",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/category/delete": {
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Удалить категорию",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "Id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/category/delete/image": {
+      "delete": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Удаление картинки группы",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/checkauth": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Проверка авторизации пользователя. Возвращает успешный статус, если пользователь авторизован.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/checkpassword": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Проверка корректности указанного пароля для текущего пользователя.",
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "description": "Пароль для проверки.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/getavatar": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Получение аватара текущего пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/getavatar/{id}": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Получение аватара пользователя по ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID пользователя.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/getinfo": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Получение информации о текущем пользователе.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/getinfo/{auth}": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Получение информации о пользователе по имени или ID.",
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "path",
+            "description": "Имя пользователя или ID.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/getrole": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Получение роли текущего пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/auth/getusername": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Получение имени текущего пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/auth/login": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Вход в систему от имени пользователя(только для администратора).",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Данные для авторизации.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Вход в систему.",
+        "requestBody": {
+          "description": "Данные для авторизации.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/card/get/image/{cardId}": {
+      "get": {
+        "tags": [
+          "Card"
+        ],
+        "summary": "Возвращает изображение карты по её ID",
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "path",
+            "description": "ID карты",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Файл-изображение"
+          },
+          "400": {
+            "description": "Карта не найдена или нет изображения"
+          }
+        }
+      }
+    },
+    "/giapi/category/checkrights": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Определяет права на категорию",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/category/get/count": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Получить количество категорий",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/category/get/image/{categoryId}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Возвращает изображение категории по её ID",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "ID категории",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Файл-изображение"
+          },
+          "400": {
+            "description": "Категория не найдена или нет изображения"
+          }
+        }
+      }
+    },
+    "/giapi/category/get/info": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Получить всю информацию о категории",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "Id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsCategory"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsCategory"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/category/get/infowithcards": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Получить всю информацию о категории и картах",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "Id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsCategory"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsCategory"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/category/get/tencategories": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Получить информацию о 10 категориях",
+        "parameters": [
+          {
+            "name": "index",
+            "in": "query",
+            "description": "Номер страницы",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Json с категориями",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/category/searchcategories": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Ищет все категории, удовлетворяющие условиям поиска",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "ID категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "categoryName",
+            "in": "query",
+            "description": "Имя категории",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "ID владельца категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ownerName",
+            "in": "query",
+            "description": "Имя владельца категории",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeCards",
+            "in": "query",
+            "description": "Включить связанные карточки",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "showSubscribed",
+            "in": "query",
+            "description": "true — только подписанные, false — только неподписанные, null — все",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "ID пользователя (взаимоисключимо с username)",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Имя пользователя (взаимоисключимо с userId)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showOwnerInfo",
+            "in": "query",
+            "description": "Показывать владельца категории",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Json с категориями",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/sub/checksubscription": {
+      "get": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Проверяет, подписан ли текущий пользователь на категорию",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "Id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/sub/checksubscriptionby": {
+      "get": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Проверяет, подписан ли указанный пользователь на категорию (только для администратора)",
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "query",
+            "description": "id или username пользователя",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/sub/getsubscriptions": {
+      "get": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Возвращает все категории, на которые подписан данный пользователь",
+        "parameters": [
+          {
+            "name": "includeCards",
+            "in": "query",
+            "description": "Включить ли связанные карты",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/sub/getsubscriptionsby": {
+      "get": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Возвращает все категории, на которые подписан другой пользователь",
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "query",
+            "description": "id или username пользователя",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeCards",
+            "in": "query",
+            "description": "Включить ли связанные карты",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CardsCategory"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/auth/changepassword": {
+      "patch": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Изменение пароля пользователя.",
+        "parameters": [
+          {
+            "name": "oldPassword",
+            "in": "query",
+            "description": "Старый пароль пользователя.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "newPassword",
+            "in": "query",
+            "description": "Новый пароль пользователя.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/changeusername": {
+      "patch": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Смена имени текущего пользователя",
+        "parameters": [
+          {
+            "name": "newUsername",
+            "in": "query",
+            "description": "Новое имя пользователя.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/card/change/image": {
+      "patch": {
+        "tags": [
+          "Card"
+        ],
+        "summary": "Меняет картинку карты. Требует форму",
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "query",
+            "description": "id карты",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/card/change/name": {
+      "patch": {
+        "tags": [
+          "Card"
+        ],
+        "summary": "Меняет имя карты",
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "query",
+            "description": "id карты",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cardName",
+            "in": "query",
+            "description": "Имя карты",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/category/change/description": {
+      "patch": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Меняет описание категории",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "categoryDescription",
+            "in": "query",
+            "description": "Описание категории",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/category/change/image": {
+      "patch": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Добавляет картинку категории. Требует форму",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/category/change/name": {
+      "patch": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Меняет имя категории",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "categoryName",
+            "in": "query",
+            "description": "Имя категории",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/checkusername": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Проверка доступности имени пользователя.",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Имя пользователя для проверки.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Регистрация нового пользователя.",
+        "requestBody": {
+          "description": "Данные пользователя для регистрации.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/card/create": {
+      "post": {
+        "tags": [
+          "Card"
+        ],
+        "summary": "Создает новую карту в данной категории. Требует форму",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "Id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "cardName",
+            "in": "query",
+            "description": "Имя карты",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/category/сreate": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Создает новую категорию карт, владелец - данный пользователь",
+        "parameters": [
+          {
+            "name": "categoryName",
+            "in": "query",
+            "description": "Имя категории",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/category/createby": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Создает новую категорию карт(только для администратора)",
+        "parameters": [
+          {
+            "name": "categoryName",
+            "in": "query",
+            "description": "Имя категории",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "auth",
+            "in": "query",
+            "description": "id или username владельца",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/giapi/sub/subscribe": {
+      "post": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Добавляет пользователю подписку на категорию",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/sub/subscribeby": {
+      "post": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Добавляет конкретному пользователю подписку на категорию(только для администратора)",
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "query",
+            "description": "id или username пользователя",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/sub/unsubscribe": {
+      "post": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Удаляет у пользователя подписку на категорию",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/sub/unsubscribeby": {
+      "post": {
+        "tags": [
+          "Subscribe"
+        ],
+        "summary": "Удаляет у конкретного пользователя подписку на категорию (только для администратора)",
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "query",
+            "description": "id или username пользователя",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "id категории",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/giapi/auth/putavatar": {
+      "put": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Загрузка аватара для текущего пользователя.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthModel": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Card": {
+        "type": "object",
+        "properties": {
+          "cardId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cardCategoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cardName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardImage": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "cardCategory": {
+            "$ref": "#/components/schemas/CardsCategory"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CardsCategory": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryImage": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "categoryOwnerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Card"
+            },
+            "nullable": true
+          },
+          "categoryOwner": {
+            "$ref": "#/components/schemas/User"
+          },
+          "userSubscribes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserSubscribe"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardsCategories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CardsCategory"
+            },
+            "nullable": true
+          },
+          "userData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserDatum"
+            },
+            "nullable": true
+          },
+          "userSubscribes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserSubscribe"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDatum": {
+        "type": "object",
+        "properties": {
+          "avatarId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "avatar": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserSubscribe": {
+        "type": "object",
+        "properties": {
+          "subscribeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "$ref": "#/components/schemas/CardsCategory"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GuessItAPI</name>
+    </assembly>
+    <members>
+        <member name="M:GuessItAPI.Controllers.CardController.CreateCard(System.Int32,System.String)">
+            <summary>
+            Создает новую карту в данной категории. Требует форму
+            </summary>
+            <param name="categoryId">Id категории</param>
+            <param name="cardName">Имя карты</param>
+            <returns>Id созданной карты при успехе, иначе код ошибки (BadRequest)</returns>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CardController.ChangeCardName(System.Int32,System.String)">
+            <summary>
+            Меняет имя карты
+            </summary>
+            <param name="cardId">id карты</param>
+            <param name="cardName">Имя карты</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CardController.ChangeCardImage(System.Int32)">
+            <summary>
+            Меняет картинку карты. Требует форму
+            </summary>
+            <param name="cardId">id карты</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CardController.GetCardImage(System.Int32)">
+            <summary>
+            Возвращает изображение карты по её ID
+            </summary>
+            <param name="cardId">ID карты</param>
+            <response code="200">Файл-изображение</response>
+            <response code="400">Карта не найдена или нет изображения</response>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CardController.DeleteCard(System.Int32)">
+            <summary>
+            Удалить карту
+            </summary>
+            <param name="cardId">Id карты</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.CreateCategory(System.String)">
+            <summary>
+            Создает новую категорию карт, владелец - данный пользователь
+            </summary>
+            <param name="categoryName">Имя категории</param>
+            <returns>Id созданной категории при успехе, иначе код ошибки (BadRequest)</returns>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.CreateCategory(System.String,System.String)">
+            <summary>
+            Создает новую категорию карт(только для администратора)
+            </summary>
+            <param name="categoryName">Имя категории</param>
+            <param name="auth">id или username владельца</param>
+            <returns>Id созданной категории при успехе, иначе код ошибки (BadRequest)</returns>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.ChangeDescription(System.Int32,System.String)">
+            <summary>
+            Меняет описание категории
+            </summary>
+            <param name="categoryId">id категории</param>
+            <param name="categoryDescription">Описание категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.ChangeCategoryName(System.Int32,System.String)">
+            <summary>
+            Меняет имя категории
+            </summary>
+            <param name="categoryId">id категории</param>
+            <param name="categoryName">Имя категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.PutCategoryImage(System.Int32)">
+            <summary>
+            Добавляет картинку категории. Требует форму
+            </summary>
+            <param name="categoryId">id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.DeleteCategoryImage(System.Int32)">
+            <summary>
+            Удаление картинки группы
+            </summary>
+            <param name="categoryId">id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.GetCategoryImage(System.Int32)">
+            <summary>
+            Возвращает изображение категории по её ID
+            </summary>
+            <param name="categoryId">ID категории</param>
+            <response code="200">Файл-изображение</response>
+            <response code="400">Категория не найдена или нет изображения</response>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.CheckRights(System.Int32)">
+            <summary>
+            Определяет права на категорию
+            </summary>
+            <param name="categoryId">id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.GetCategoryInfo(System.Int32)">
+            <summary>
+            Получить всю информацию о категории
+            </summary>
+            <param name="categoryId">Id категории</param>
+            <returns>Json категории, иначе код ошибки (BadRequest)</returns>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.GetCategoryInfoWithCards(System.Int32)">
+            <summary>
+            Получить всю информацию о категории и картах
+            </summary>
+            <param name="categoryId">Id категории</param>
+            <returns>Json категории с картами, иначе код ошибки (BadRequest)</returns>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.GetCategoriesCount">
+            <summary>
+            Получить количество категорий
+            </summary>
+            <returns>Количество категорий на сервере(int)</returns>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.GetTenCategories(System.Int32)">
+            <summary>
+            Получить информацию о 10 категориях
+            </summary>
+            <param name="index">Номер страницы</param>
+            <returns>Десять категорий(или меньше, если в конце) по порядку согласно индексу</returns>
+            <response code="200">Json с категориями</response>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.SearchCategories(System.Nullable{System.Int32},System.String,System.Nullable{System.Int32},System.String,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.String,System.Boolean)">
+            <summary>
+            Ищет все категории, удовлетворяющие условиям поиска
+            </summary>
+            <param name="categoryId">ID категории</param>
+            <param name="categoryName">Имя категории</param>
+            <param name="ownerId">ID владельца категории</param>
+            <param name="ownerName">Имя владельца категории</param>
+            <param name="includeCards">Включить связанные карточки</param>
+            <param name="showSubscribed">true — только подписанные, false — только неподписанные, null — все</param>
+            <param name="userId">ID пользователя (взаимоисключимо с username)</param>
+            <param name="username">Имя пользователя (взаимоисключимо с userId)</param>
+            <param name="showOwnerInfo">Показывать владельца категории</param>
+            <response code="200">Json с категориями</response>
+        </member>
+        <member name="M:GuessItAPI.Controllers.CategoryController.DeleteCategory(System.Int32)">
+            <summary>
+            Удалить категорию
+            </summary>
+            <param name="categoryId">Id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.Subscribe(System.Int32)">
+            <summary>
+            Добавляет пользователю подписку на категорию
+            </summary>
+            <param name="categoryId">id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.SubscribeBy(System.String,System.Int32)">
+            <summary>
+            Добавляет конкретному пользователю подписку на категорию(только для администратора)
+            </summary>
+            <param name="categoryId">id категории</param>
+            <param name="auth">id или username пользователя</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.Unsubscribe(System.Int32)">
+            <summary>
+            Удаляет у пользователя подписку на категорию
+            </summary>
+            <param name="categoryId">id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.UnsubscribeBy(System.String,System.Int32)">
+            <summary>
+            Удаляет у конкретного пользователя подписку на категорию (только для администратора)
+            </summary>
+            <param name="categoryId">id категории</param>
+            <param name="auth">id или username пользователя</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.GetAllSubscribedCategories(System.Boolean)">
+            <summary>
+            Возвращает все категории, на которые подписан данный пользователь
+            </summary>
+            <param name="includeCards">Включить ли связанные карты</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.GetAllSubscribedCategoriesBy(System.String,System.Boolean)">
+            <summary>
+            Возвращает все категории, на которые подписан другой пользователь
+            </summary>
+            <param name="includeCards">Включить ли связанные карты</param>
+            /// <param name="auth">id или username пользователя</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.CheckSubscription(System.Int32)">
+            <summary>
+            Проверяет, подписан ли текущий пользователь на категорию
+            </summary>
+            <param name="categoryId">Id категории</param>
+        </member>
+        <member name="M:GuessItAPI.Controllers.SubscribeController.CheckSubscriptionBy(System.String,System.Int32)">
+            <summary>
+            Проверяет, подписан ли указанный пользователь на категорию (только для администратора)
+            </summary>
+            <param name="auth">id или username пользователя</param>
+            <param name="categoryId">id категории</param>
+        </member>
+        <member name="T:MainShelkonAPI.Controllers.AuthController">
+            <summary>
+            Контроллер для управления авторизацией и профилем пользователя.
+            </summary>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.Register(GuessItAPI.Models.AuthModel)">
+            <summary>
+            Регистрация нового пользователя.
+            </summary>
+            <param name="auth">Данные пользователя для регистрации.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.UsernameChecker(System.String)">
+            <summary>
+            Проверка доступности имени пользователя.
+            </summary>
+            <param name="username">Имя пользователя для проверки.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.Deleter(System.String)">
+            <summary>
+            Удаление пользователя по имени (только для администраторов).
+            </summary>
+            <param name="username">Имя пользователя для удаления.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.Deleter">
+            <summary>
+            Удаление текущего пользователя.
+            </summary>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.Login(GuessItAPI.Models.AuthModel)">
+            <summary>
+            Вход в систему.
+            </summary>
+            <param name="auth">Данные для авторизации.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.Login(System.String)">
+            <summary>
+            Вход в систему от имени пользователя(только для администратора).
+            </summary>
+            <param name="username">Данные для авторизации.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.GetInfo(System.String)">
+            <summary>
+            Получение информации о пользователе по имени или ID.
+            </summary>
+            <param name="auth">Имя пользователя или ID.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.GetInfo">
+            <summary>
+            Получение информации о текущем пользователе.
+            </summary>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.PutAvatar">
+            <summary>
+            Загрузка аватара для текущего пользователя.
+            </summary>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.GetAvatar(System.Int32)">
+            <summary>
+            Получение аватара пользователя по ID.
+            </summary>
+            <param name="id">ID пользователя.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.GetAvatar">
+            <summary>
+            Получение аватара текущего пользователя.
+            </summary>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.DeleteAvatar">
+            <summary>
+            Удаление аватара текущего пользователя.
+            </summary>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.ChangeUsername(System.String)">
+            <summary>
+            Смена имени текущего пользователя
+            </summary>
+            <param name="newUsername">Новое имя пользователя.</param>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.ChangePassword(System.String,System.String)">
+            <summary>
+            Изменение пароля пользователя.
+            </summary>
+            <param name="oldPassword">Старый пароль пользователя.</param>
+            <param name="newPassword">Новый пароль пользователя.</param>
+            <returns>Статус операции. Возвращает <see cref="T:Microsoft.AspNetCore.Mvc.OkResult"/> при успешном изменении пароля, иначе <see cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/>.</returns>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.CheckPassword(System.String)">
+            <summary>
+            Проверка корректности указанного пароля для текущего пользователя.
+            </summary>
+            <param name="password">Пароль для проверки.</param>
+            <returns>Возвращает <see cref="T:Microsoft.AspNetCore.Mvc.OkResult"/>, если пароль корректен, иначе <see cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/>.</returns>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.CheckAuth">
+            <summary>
+            Проверка авторизации пользователя. Возвращает успешный статус, если пользователь авторизован.
+            </summary>
+            <returns>Статус успешной проверки авторизации.</returns>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.DeleteAuth">
+            <summary>
+            Удаление текущей авторизации пользователя.
+            </summary>
+            <returns>Статус успешного удаления авторизации.</returns>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.GetUsername">
+            <summary>
+            Получение имени текущего пользователя.
+            </summary>
+            <returns>Имя текущего пользователя.</returns>
+        </member>
+        <member name="M:MainShelkonAPI.Controllers.AuthController.GetRole">
+            <summary>
+            Получение роли текущего пользователя.
+            </summary>
+            <returns>Роль текущего пользователя.</returns>
+        </member>
+    </members>
+</doc>
