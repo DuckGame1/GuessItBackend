@@ -271,3 +271,11 @@ C:\Users\Shelkon\source\repos\GuessItBackend\GuessItAPI\obj\Release\net8.0\rpswa
 C:\Users\Shelkon\source\repos\GuessItBackend\GuessItAPI\obj\Release\net8.0\rjimswa.dswa.cache.json
 C:\Users\Shelkon\source\repos\GuessItBackend\GuessItAPI\obj\Release\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Shelkon\source\repos\GuessItBackend\GuessItAPI\obj\Release\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\bin\Release\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\bin\Release\net8.0\System.Web.Http.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\bin\Release\net8.0\Newtonsoft.Json.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\bin\Release\net8.0\Swashbuckle.Core.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rpswa.dswa.cache.json
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rjimswa.dswa.cache.json
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rjsmcshtml.dswa.cache.json

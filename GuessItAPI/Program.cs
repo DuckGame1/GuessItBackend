@@ -109,7 +109,7 @@ namespace GuessItAPI
             {
                 var path = context.Request.Path;
 
-                if (path.StartsWithSegments("/giapi/swagger"))
+                if (path.StartsWithSegments("/swagger"))
                 {
                     if (!context.User.Identity?.IsAuthenticated ?? true)
                     {
@@ -128,12 +128,12 @@ namespace GuessItAPI
 
             app.UseSwagger(c =>
             {
-                c.RouteTemplate = "giapi/swagger/{documentName}/swagger.json";
+                c.RouteTemplate = "swagger/{documentName}/swagger.json";
             });
             app.UseSwaggerUI(options =>
             {
-                options.RoutePrefix = "giapi/swagger";
-                options.SwaggerEndpoint("/giapi/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = "swagger";
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
 
             app.MapControllers();

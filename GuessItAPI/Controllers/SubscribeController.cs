@@ -6,7 +6,7 @@ using System.Security.Claims;
 
 namespace GuessItAPI.Controllers
 {
-    [ApiController, Route("giapi/sub")]
+    [ApiController, Route("sub")]
     public class SubscribeController : ControllerBase
     {
         private readonly CardService _cardService;

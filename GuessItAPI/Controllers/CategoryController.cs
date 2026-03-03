@@ -7,7 +7,7 @@ using System.Security.Claims;
 
 namespace GuessItAPI.Controllers
 {
-    [ApiController, Route("giapi/category")]
+    [ApiController, Route("category")]
     public class CategoryController : ControllerBase
     {
         private readonly CardService _cardService;

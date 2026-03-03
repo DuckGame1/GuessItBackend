@@ -14,7 +14,7 @@ namespace MainShelkonAPI.Controllers
     /// <summary>
     /// Контроллер для управления авторизацией и профилем пользователя.
     /// </summary>
-    [ApiController, Route("giapi/auth")]
+    [ApiController, Route("auth")]
     public class AuthController : ControllerBase
     {
         private readonly UserService _userService;

@@ -5,6 +5,8 @@ C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Ou
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\GuessItAPI.runtimeconfig.json
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\GuessItAPI.pdb
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\BCrypt.Net-Next.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\System.Net.Http.Formatting.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\System.Web.Http.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -31,10 +33,12 @@ C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Ou
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\MySqlConnector.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.Core.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\System.IO.Pipelines.dll
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\PubTmp\Out\System.Text.Encodings.Web.dll
