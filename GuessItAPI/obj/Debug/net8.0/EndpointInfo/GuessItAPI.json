@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/giapi/auth/delete": {
+    "/auth/delete": {
       "delete": {
         "tags": [
           "Auth"
@@ -18,7 +18,7 @@
         }
       }
     },
-    "/giapi/auth/delete/{username}": {
+    "/auth/delete/{username}": {
       "delete": {
         "tags": [
           "Auth"
@@ -42,7 +42,7 @@
         }
       }
     },
-    "/giapi/auth/deleteauth": {
+    "/auth/deleteauth": {
       "delete": {
         "tags": [
           "Auth"
@@ -55,7 +55,7 @@
         }
       }
     },
-    "/giapi/auth/deleteavatar": {
+    "/auth/deleteavatar": {
       "delete": {
         "tags": [
           "Auth"
@@ -68,7 +68,7 @@
         }
       }
     },
-    "/giapi/card/delete": {
+    "/card/delete": {
       "delete": {
         "tags": [
           "Card"
@@ -92,7 +92,7 @@
         }
       }
     },
-    "/giapi/category/delete": {
+    "/category/delete": {
       "delete": {
         "tags": [
           "Category"
@@ -116,7 +116,7 @@
         }
       }
     },
-    "/giapi/category/delete/image": {
+    "/category/delete/image": {
       "delete": {
         "tags": [
           "Category"
@@ -140,7 +140,7 @@
         }
       }
     },
-    "/giapi/auth/checkauth": {
+    "/auth/checkauth": {
       "get": {
         "tags": [
           "Auth"
@@ -153,7 +153,7 @@
         }
       }
     },
-    "/giapi/auth/checkpassword": {
+    "/auth/checkpassword": {
       "get": {
         "tags": [
           "Auth"
@@ -176,7 +176,7 @@
         }
       }
     },
-    "/giapi/auth/getavatar": {
+    "/auth/getavatar": {
       "get": {
         "tags": [
           "Auth"
@@ -189,7 +189,7 @@
         }
       }
     },
-    "/giapi/auth/getavatar/{id}": {
+    "/auth/getavatar/{id}": {
       "get": {
         "tags": [
           "Auth"
@@ -214,7 +214,7 @@
         }
       }
     },
-    "/giapi/auth/getinfo": {
+    "/auth/getinfo": {
       "get": {
         "tags": [
           "Auth"
@@ -227,7 +227,7 @@
         }
       }
     },
-    "/giapi/auth/getinfo/{auth}": {
+    "/auth/getinfo/{auth}": {
       "get": {
         "tags": [
           "Auth"
@@ -251,7 +251,7 @@
         }
       }
     },
-    "/giapi/auth/getrole": {
+    "/auth/getrole": {
       "get": {
         "tags": [
           "Auth"
@@ -281,7 +281,7 @@
         }
       }
     },
-    "/giapi/auth/getusername": {
+    "/auth/getusername": {
       "get": {
         "tags": [
           "Auth"
@@ -311,7 +311,7 @@
         }
       }
     },
-    "/giapi/auth/login": {
+    "/auth/login": {
       "get": {
         "tags": [
           "Auth"
@@ -365,7 +365,7 @@
         }
       }
     },
-    "/giapi/card/get/image/{cardId}": {
+    "/card/get/image/{cardId}": {
       "get": {
         "tags": [
           "Card"
@@ -393,7 +393,7 @@
         }
       }
     },
-    "/giapi/category/checkrights": {
+    "/category/checkrights": {
       "get": {
         "tags": [
           "Category"
@@ -417,7 +417,7 @@
         }
       }
     },
-    "/giapi/category/get/count": {
+    "/category/get/count": {
       "get": {
         "tags": [
           "Category"
@@ -450,7 +450,7 @@
         }
       }
     },
-    "/giapi/category/get/image/{categoryId}": {
+    "/category/get/image/{categoryId}": {
       "get": {
         "tags": [
           "Category"
@@ -478,7 +478,7 @@
         }
       }
     },
-    "/giapi/category/get/info": {
+    "/category/get/info": {
       "get": {
         "tags": [
           "Category"
@@ -519,7 +519,7 @@
         }
       }
     },
-    "/giapi/category/get/infowithcards": {
+    "/category/get/infowithcards": {
       "get": {
         "tags": [
           "Category"
@@ -560,7 +560,7 @@
         }
       }
     },
-    "/giapi/category/get/tencategories": {
+    "/category/get/tencategories": {
       "get": {
         "tags": [
           "Category"
@@ -610,7 +610,7 @@
         }
       }
     },
-    "/giapi/category/searchcategories": {
+    "/category/searchcategories": {
       "get": {
         "tags": [
           "Category"
@@ -728,7 +728,84 @@
         }
       }
     },
-    "/giapi/sub/checksubscription": {
+    "/room/{roomid}/heartbeat": {
+      "get": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Heartbeat пользователя в комнате (поддержание соединения/активности).",
+        "parameters": [
+          {
+            "name": "roomid",
+            "in": "path",
+            "description": "ID комнаты.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Heartbeat принят."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/GetRooms": {
+      "get": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Возвращает список комнат с фильтрами.",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Статус игры/комнаты (например Lobby/InGame/Finished).",
+            "schema": {
+              "$ref": "#/components/schemas/GameStatus"
+            }
+          },
+          {
+            "name": "isFull",
+            "in": "query",
+            "description": "Фильтр по заполненности (true — только полные, false — только неполные/или как у тебя реализовано).",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Фильтр по названию комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "Фильтр по ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Список комнат успешно получен."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/sub/checksubscription": {
       "get": {
         "tags": [
           "Subscribe"
@@ -752,7 +829,7 @@
         }
       }
     },
-    "/giapi/sub/checksubscriptionby": {
+    "/sub/checksubscriptionby": {
       "get": {
         "tags": [
           "Subscribe"
@@ -784,7 +861,7 @@
         }
       }
     },
-    "/giapi/sub/getsubscriptions": {
+    "/sub/getsubscriptions": {
       "get": {
         "tags": [
           "Subscribe"
@@ -834,7 +911,7 @@
         }
       }
     },
-    "/giapi/sub/getsubscriptionsby": {
+    "/sub/getsubscriptionsby": {
       "get": {
         "tags": [
           "Subscribe"
@@ -892,7 +969,7 @@
         }
       }
     },
-    "/giapi/auth/changepassword": {
+    "/auth/changepassword": {
       "patch": {
         "tags": [
           "Auth"
@@ -923,7 +1000,7 @@
         }
       }
     },
-    "/giapi/auth/changeusername": {
+    "/auth/changeusername": {
       "patch": {
         "tags": [
           "Auth"
@@ -946,7 +1023,7 @@
         }
       }
     },
-    "/giapi/card/change/image": {
+    "/card/change/image": {
       "patch": {
         "tags": [
           "Card"
@@ -970,7 +1047,7 @@
         }
       }
     },
-    "/giapi/card/change/name": {
+    "/card/change/name": {
       "patch": {
         "tags": [
           "Card"
@@ -1002,7 +1079,7 @@
         }
       }
     },
-    "/giapi/category/change/description": {
+    "/category/change/description": {
       "patch": {
         "tags": [
           "Category"
@@ -1034,7 +1111,7 @@
         }
       }
     },
-    "/giapi/category/change/image": {
+    "/category/change/image": {
       "patch": {
         "tags": [
           "Category"
@@ -1058,7 +1135,7 @@
         }
       }
     },
-    "/giapi/category/change/name": {
+    "/category/change/name": {
       "patch": {
         "tags": [
           "Category"
@@ -1090,7 +1167,7 @@
         }
       }
     },
-    "/giapi/auth/checkusername": {
+    "/auth/checkusername": {
       "post": {
         "tags": [
           "Auth"
@@ -1113,7 +1190,7 @@
         }
       }
     },
-    "/giapi/auth/register": {
+    "/auth/register": {
       "post": {
         "tags": [
           "Auth"
@@ -1146,7 +1223,7 @@
         }
       }
     },
-    "/giapi/card/create": {
+    "/card/create": {
       "post": {
         "tags": [
           "Card"
@@ -1198,7 +1275,7 @@
         }
       }
     },
-    "/giapi/category/сreate": {
+    "/category/сreate": {
       "post": {
         "tags": [
           "Category"
@@ -1241,7 +1318,7 @@
         }
       }
     },
-    "/giapi/category/createby": {
+    "/category/createby": {
       "post": {
         "tags": [
           "Category"
@@ -1292,7 +1369,369 @@
         }
       }
     },
-    "/giapi/sub/subscribe": {
+    "/room/ChangeHost": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Передаёт права хоста другому игроку (только текущий хост).",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "newHostId",
+            "in": "query",
+            "description": "ID пользователя, которому передаются права хоста.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Хост изменён."
+          },
+          "400": {
+            "description": "Текущий пользователь не является хостом."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/ChangeTeam": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Меняет команду текущего пользователя в комнате.",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "team",
+            "in": "query",
+            "description": "Команда, в которую переходит пользователь.",
+            "schema": {
+              "$ref": "#/components/schemas/Teams"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Команда изменена."
+          },
+          "400": {
+            "description": "Невозможно изменить команду (например, пользователь не в комнате)."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/createroom": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Создаёт новую комнату. Текущий пользователь становится хостом.",
+        "parameters": [
+          {
+            "name": "roomName",
+            "in": "query",
+            "description": "Название комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "maxPlayers",
+            "in": "query",
+            "description": "Максимальное количество игроков в комнате.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Комната успешно создана."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/JoinRoom": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Присоединяет текущего пользователя к комнате по ID и паролю.",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "Пароль комнаты (если установлен).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Пользователь присоединился к комнате."
+          },
+          "400": {
+            "description": "Комната заполнена, не существует или пароль неверный."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/LeaveRoom": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Выход текущего пользователя из комнаты.",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Пользователь вышел из комнаты."
+          },
+          "400": {
+            "description": "Невозможно выйти из комнаты (например, комнаты нет или пользователь не в комнате)."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/SetCategory": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Устанавливает категорию/набор вопросов комнаты (только хост).",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "ID категории.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Категория установлена."
+          },
+          "400": {
+            "description": "Текущий пользователь не является хостом."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/SetGameStatus": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Устанавливает статус игры/комнаты (обычно только хост).",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gameStatus",
+            "in": "query",
+            "description": "Новый статус игры.",
+            "schema": {
+              "$ref": "#/components/schemas/GameStatus"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Статус игры изменён."
+          },
+          "400": {
+            "description": "Текущий пользователь не является хостом."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/SetJoinCode": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Устанавливает код присоединения к комнате (только хост).",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "joinCode",
+            "in": "query",
+            "description": "Новый код присоединения.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Код присоединения изменён."
+          },
+          "400": {
+            "description": "Текущий пользователь не является хостом."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/SetName": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Изменяет название комнаты (только хост).",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Новое название комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Название изменено."
+          },
+          "400": {
+            "description": "Текущий пользователь не является хостом."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/room/SetPassword": {
+      "post": {
+        "tags": [
+          "Room"
+        ],
+        "summary": "Устанавливает пароль комнаты (только хост).",
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "description": "ID комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "newPassword",
+            "in": "query",
+            "description": "Новый пароль комнаты.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Пароль установлен."
+          },
+          "400": {
+            "description": "Текущий пользователь не является хостом."
+          },
+          "401": {
+            "description": "Пользователь не авторизован."
+          }
+        }
+      }
+    },
+    "/sub/subscribe": {
       "post": {
         "tags": [
           "Subscribe"
@@ -1316,7 +1755,7 @@
         }
       }
     },
-    "/giapi/sub/subscribeby": {
+    "/sub/subscribeby": {
       "post": {
         "tags": [
           "Subscribe"
@@ -1348,7 +1787,7 @@
         }
       }
     },
-    "/giapi/sub/unsubscribe": {
+    "/sub/unsubscribe": {
       "post": {
         "tags": [
           "Subscribe"
@@ -1372,7 +1811,7 @@
         }
       }
     },
-    "/giapi/sub/unsubscribeby": {
+    "/sub/unsubscribeby": {
       "post": {
         "tags": [
           "Subscribe"
@@ -1404,7 +1843,7 @@
         }
       }
     },
-    "/giapi/auth/putavatar": {
+    "/auth/putavatar": {
       "put": {
         "tags": [
           "Auth"
@@ -1503,6 +1942,23 @@
           }
         },
         "additionalProperties": false
+      },
+      "GameStatus": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Teams": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "User": {
         "type": "object",

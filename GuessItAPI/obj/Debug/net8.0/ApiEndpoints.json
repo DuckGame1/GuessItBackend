@@ -2,7 +2,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "ChangePassword",
-    "RelativePath": "giapi/auth/changepassword",
+    "RelativePath": "auth/changepassword",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -23,7 +23,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "ChangeUsername",
-    "RelativePath": "giapi/auth/changeusername",
+    "RelativePath": "auth/changeusername",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -39,7 +39,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "CheckAuth",
-    "RelativePath": "giapi/auth/checkauth",
+    "RelativePath": "auth/checkauth",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -49,7 +49,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "CheckPassword",
-    "RelativePath": "giapi/auth/checkpassword",
+    "RelativePath": "auth/checkpassword",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -65,7 +65,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "UsernameChecker",
-    "RelativePath": "giapi/auth/checkusername",
+    "RelativePath": "auth/checkusername",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -81,7 +81,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "Deleter",
-    "RelativePath": "giapi/auth/delete",
+    "RelativePath": "auth/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -91,7 +91,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "Deleter",
-    "RelativePath": "giapi/auth/delete/{username}",
+    "RelativePath": "auth/delete/{username}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -107,7 +107,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "DeleteAuth",
-    "RelativePath": "giapi/auth/deleteauth",
+    "RelativePath": "auth/deleteauth",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -117,7 +117,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "DeleteAvatar",
-    "RelativePath": "giapi/auth/deleteavatar",
+    "RelativePath": "auth/deleteavatar",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -127,7 +127,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "GetAvatar",
-    "RelativePath": "giapi/auth/getavatar",
+    "RelativePath": "auth/getavatar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -137,7 +137,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "GetAvatar",
-    "RelativePath": "giapi/auth/getavatar/{id}",
+    "RelativePath": "auth/getavatar/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -153,7 +153,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "GetInfo",
-    "RelativePath": "giapi/auth/getinfo",
+    "RelativePath": "auth/getinfo",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -163,7 +163,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "GetInfo",
-    "RelativePath": "giapi/auth/getinfo/{auth}",
+    "RelativePath": "auth/getinfo/{auth}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -179,7 +179,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "GetRole",
-    "RelativePath": "giapi/auth/getrole",
+    "RelativePath": "auth/getrole",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -199,7 +199,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "GetUsername",
-    "RelativePath": "giapi/auth/getusername",
+    "RelativePath": "auth/getusername",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -219,7 +219,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "giapi/auth/login",
+    "RelativePath": "auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -235,7 +235,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "giapi/auth/login",
+    "RelativePath": "auth/login",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -251,7 +251,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "PutAvatar",
-    "RelativePath": "giapi/auth/putavatar",
+    "RelativePath": "auth/putavatar",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -261,7 +261,7 @@
   {
     "ContainingType": "MainShelkonAPI.Controllers.AuthController",
     "Method": "Register",
-    "RelativePath": "giapi/auth/register",
+    "RelativePath": "auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -277,7 +277,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CardController",
     "Method": "ChangeCardImage",
-    "RelativePath": "giapi/card/change/image",
+    "RelativePath": "card/change/image",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -293,7 +293,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CardController",
     "Method": "ChangeCardName",
-    "RelativePath": "giapi/card/change/name",
+    "RelativePath": "card/change/name",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -314,7 +314,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CardController",
     "Method": "CreateCard",
-    "RelativePath": "giapi/card/create",
+    "RelativePath": "card/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -345,7 +345,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CardController",
     "Method": "DeleteCard",
-    "RelativePath": "giapi/card/delete",
+    "RelativePath": "card/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -361,7 +361,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CardController",
     "Method": "GetCardImage",
-    "RelativePath": "giapi/card/get/image/{cardId}",
+    "RelativePath": "card/get/image/{cardId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -377,7 +377,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "CreateCategory",
-    "RelativePath": "giapi/category/\u0441reate",
+    "RelativePath": "category/\u0441reate",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -403,7 +403,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "ChangeDescription",
-    "RelativePath": "giapi/category/change/description",
+    "RelativePath": "category/change/description",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -424,7 +424,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "PutCategoryImage",
-    "RelativePath": "giapi/category/change/image",
+    "RelativePath": "category/change/image",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -440,7 +440,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "ChangeCategoryName",
-    "RelativePath": "giapi/category/change/name",
+    "RelativePath": "category/change/name",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -461,7 +461,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "CheckRights",
-    "RelativePath": "giapi/category/checkrights",
+    "RelativePath": "category/checkrights",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -477,7 +477,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "CreateCategory",
-    "RelativePath": "giapi/category/createby",
+    "RelativePath": "category/createby",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -508,7 +508,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "DeleteCategory",
-    "RelativePath": "giapi/category/delete",
+    "RelativePath": "category/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -524,7 +524,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "DeleteCategoryImage",
-    "RelativePath": "giapi/category/delete/image",
+    "RelativePath": "category/delete/image",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -540,7 +540,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "GetCategoriesCount",
-    "RelativePath": "giapi/category/get/count",
+    "RelativePath": "category/get/count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -560,7 +560,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "GetCategoryImage",
-    "RelativePath": "giapi/category/get/image/{categoryId}",
+    "RelativePath": "category/get/image/{categoryId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -576,7 +576,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "GetCategoryInfo",
-    "RelativePath": "giapi/category/get/info",
+    "RelativePath": "category/get/info",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -602,7 +602,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "GetCategoryInfoWithCards",
-    "RelativePath": "giapi/category/get/infowithcards",
+    "RelativePath": "category/get/infowithcards",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -628,7 +628,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "GetTenCategories",
-    "RelativePath": "giapi/category/get/tencategories",
+    "RelativePath": "category/get/tencategories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -654,7 +654,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.CategoryController",
     "Method": "SearchCategories",
-    "RelativePath": "giapi/category/searchcategories",
+    "RelativePath": "category/searchcategories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -718,9 +718,261 @@
     ]
   },
   {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "HeartBeat",
+    "RelativePath": "room/{roomid}/heartbeat",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomid",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "ChangeHost",
+    "RelativePath": "room/ChangeHost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newHostId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "ChangeTeam",
+    "RelativePath": "room/ChangeTeam",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "team",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "CreateRoom",
+    "RelativePath": "room/createroom",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "maxPlayers",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "GetRooms",
+    "RelativePath": "room/GetRooms",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "isFull",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "JoinRoom",
+    "RelativePath": "room/JoinRoom",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "LeaveRoom",
+    "RelativePath": "room/LeaveRoom",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "SetCategory",
+    "RelativePath": "room/SetCategory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "SetGameStatus",
+    "RelativePath": "room/SetGameStatus",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "gameStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "SetJoinCode",
+    "RelativePath": "room/SetJoinCode",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "joinCode",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "SetName",
+    "RelativePath": "room/SetName",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuessItAPI.Controllers.RoomController",
+    "Method": "SetPassword",
+    "RelativePath": "room/SetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "CheckSubscription",
-    "RelativePath": "giapi/sub/checksubscription",
+    "RelativePath": "sub/checksubscription",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -736,7 +988,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "CheckSubscriptionBy",
-    "RelativePath": "giapi/sub/checksubscriptionby",
+    "RelativePath": "sub/checksubscriptionby",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -757,7 +1009,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "GetAllSubscribedCategories",
-    "RelativePath": "giapi/sub/getsubscriptions",
+    "RelativePath": "sub/getsubscriptions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -783,7 +1035,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "GetAllSubscribedCategoriesBy",
-    "RelativePath": "giapi/sub/getsubscriptionsby",
+    "RelativePath": "sub/getsubscriptionsby",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -814,7 +1066,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "Subscribe",
-    "RelativePath": "giapi/sub/subscribe",
+    "RelativePath": "sub/subscribe",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -830,7 +1082,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "SubscribeBy",
-    "RelativePath": "giapi/sub/subscribeby",
+    "RelativePath": "sub/subscribeby",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -851,7 +1103,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "Unsubscribe",
-    "RelativePath": "giapi/sub/unsubscribe",
+    "RelativePath": "sub/unsubscribe",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -867,7 +1119,7 @@
   {
     "ContainingType": "GuessItAPI.Controllers.SubscribeController",
     "Method": "UnsubscribeBy",
-    "RelativePath": "giapi/sub/unsubscribeby",
+    "RelativePath": "sub/unsubscribeby",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

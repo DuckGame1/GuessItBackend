@@ -1,5 +1,6 @@
 
 using GuessItAPI.Context;
+using GuessItAPI.Interfaces;
 using GuessItAPI.Jwt;
 using GuessItAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -58,9 +59,13 @@ namespace GuessItAPI
 
             services.AddAuthorization();
 
+            services.AddSingleton<IRoomStore, RoomStore>();
             services.AddSingleton<IConfiguration>(builder.Configuration);
             services.AddTransient<UserService>();
             services.AddTransient<CardService>();
+            services.AddTransient<RoomService>();
+
+            services.AddHostedService<RoomsCleanupService>();
 
             builder.Services.AddDbContext<GuessItDbContext>(options =>
                 options.UseMySql(
