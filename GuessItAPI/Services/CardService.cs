@@ -31,11 +31,6 @@ namespace GuessItAPI.Services
         public async Task<CardsCategory?> GetCategory(int categoryId)
         {
             CardsCategory? category = await _dbContext.CardsCategories.SingleOrDefaultAsync(c => c.CategoryId == categoryId);
-
-            if (category != null)
-            {
-                category.CategoryImage = Array.Empty<byte>();
-            }
             return category;
         }
 

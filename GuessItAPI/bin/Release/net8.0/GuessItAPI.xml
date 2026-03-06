@@ -33,6 +33,14 @@
             <response code="200">Файл-изображение</response>
             <response code="400">Карта не найдена или нет изображения</response>
         </member>
+        <member name="M:GuessItAPI.Controllers.CardController.GetCardInfo(System.Int32)">
+            <summary>
+            Возвращает информацию карты по её ID
+            </summary>
+            <param name="cardId">ID карты</param>
+            <response code="200">Информация о карте</response>
+            <response code="400">Карта не найдена</response>
+        </member>
         <member name="M:GuessItAPI.Controllers.CardController.DeleteCard(System.Int32)">
             <summary>
             Удалить карту

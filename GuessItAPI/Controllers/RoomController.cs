@@ -3,6 +3,7 @@ using GuessItAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using System.Xml.Linq;
 using static GuessItAPI.Rooms.RoomInfo;
 
 namespace GuessItAPI.Controllers
@@ -33,6 +34,8 @@ namespace GuessItAPI.Controllers
         [HttpPost, Route("createroom"), Authorize]
         public IActionResult CreateRoom(string roomName, int maxPlayers)
         {
+            if (roomName.Length > 63)
+                return BadRequest("Too long name");
             string username = HttpContext.User.FindFirst(ClaimTypes.Name)!.Value;
             int hostId = _userService.GetByUsername(username).Id;
             RoomInfo room = _roomService.CreateRoom(hostId, roomName, maxPlayers);
@@ -103,6 +106,8 @@ namespace GuessItAPI.Controllers
         [HttpPost, Route("SetName"), Authorize]
         public IActionResult SetName(string roomId, string name)
         {
+            if (name.Length > 63)
+                return BadRequest("Too long name");
             string username = HttpContext.User.FindFirst(ClaimTypes.Name)!.Value;
             int hostId = _userService.GetByUsername(username).Id;
             bool status = _roomService.SetName(roomId, hostId, name);

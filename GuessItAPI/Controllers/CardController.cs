@@ -127,7 +127,7 @@ namespace GuessItAPI.Controllers
         [HttpGet, Route("get/image/{cardId}"), Authorize]
         public async Task<IActionResult> GetCardImage(int cardId)
         {
-            byte[]? imageBytes = await _cardService.GetCategoryImage(cardId);
+            byte[]? imageBytes = await _cardService.GetCardImage(cardId);
 
             if (imageBytes == null || imageBytes.Length == 0)
                 return BadRequest();
@@ -135,6 +135,21 @@ namespace GuessItAPI.Controllers
             string mimeType = CardService.GetMimeType(imageBytes);
 
             return File(imageBytes, mimeType);
+        }
+        /// <summary>
+        /// Возвращает информацию карты по её ID
+        /// </summary>
+        /// <param name="cardId">ID карты</param>
+        /// <response code="200">Информация о карте</response>
+        /// <response code="400">Карта не найдена</response>
+        [HttpGet, Route("get/info/{cardId}"), Authorize]
+        public async Task<IActionResult> GetCardInfo(int cardId)
+        {
+            Card? card = await _cardService.GetCard(cardId);
+
+            if (card == null)
+                return BadRequest();
+            return Ok(card);
         }
 
         /// <summary>

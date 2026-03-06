@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RACgSjT5bmE=",
+  "dgSpecHash": "hOD59u6HMM0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+  "projectFilePath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shelkon\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Shelkon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -77,9 +77,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Microsoft.AspNet.WebApi.Client 4.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "filePath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "libraryId": "Microsoft.AspNet.WebApi.Client",
       "targetGraphs": [
         "net8.0"
@@ -89,9 +89,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Microsoft.AspNet.WebApi.Core 4.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "filePath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
         "net8.0"
@@ -101,9 +101,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Microsoft.Net.Http 2.0.20710' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "filePath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "libraryId": "Microsoft.Net.Http",
       "targetGraphs": [
         "net8.0"
@@ -113,9 +113,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Newtonsoft.Json 7.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "filePath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net8.0"
@@ -125,9 +125,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "Package 'Swashbuckle.Core 5.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+      "filePath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
       "libraryId": "Swashbuckle.Core",
       "targetGraphs": [
         "net8.0"

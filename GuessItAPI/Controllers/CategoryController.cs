@@ -3,6 +3,7 @@ using GuessItAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using MySqlConnector;
 using System.Security.Claims;
 
 namespace GuessItAPI.Controllers
@@ -208,6 +209,7 @@ namespace GuessItAPI.Controllers
             CardsCategory? category = await _cardService.GetCategory(categoryId);
             if (category == null)
                 return BadRequest();
+            category.CategoryImage = null;
             return Ok(new { category = category });
         }
 

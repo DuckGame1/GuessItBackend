@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj": {}
+    "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj": {
+    "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
         "projectName": "GuessItAPI",
-        "projectPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\GuessItAPI.csproj",
+        "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
         "packagesPath": "C:\\Users\\Shelkon\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\obj\\",
         "projectStyle": "PackageReference",
