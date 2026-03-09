@@ -11,7 +11,7 @@
         "projectName": "GuessItAPI",
         "projectPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\GuessItAPI.csproj",
         "packagesPath": "C:\\Users\\Shelkon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shelkon\\source\\repos\\GuessItAPI\\GuessItAPI\\obj\\",
+        "outputPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
