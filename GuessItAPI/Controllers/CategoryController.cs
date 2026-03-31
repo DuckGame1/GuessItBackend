@@ -25,7 +25,7 @@ namespace GuessItAPI.Controllers
         /// </summary>
         /// <param name="categoryName">Имя категории</param>
         /// <returns>Id созданной категории при успехе, иначе код ошибки (BadRequest)</returns>
-        [HttpPost, Route("сreate"), Authorize]
+        [HttpPost, Route("create"), Authorize]
         [ApiExplorerSettings(GroupName = "v1")]
         public async Task<ActionResult<int>> CreateCategory(string categoryName)
         {

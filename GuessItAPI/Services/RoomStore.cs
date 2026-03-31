@@ -20,7 +20,8 @@ namespace GuessItAPI.Services
                 HostId = hostId,
                 RoomName = roomName,
                 MaxPlayers = maxPlayers,
-                RoomPasswordHash = PasswordHasher.Generate("")
+                RoomPasswordHash = "",
+                Status = RoomInfo.GameStatus.Closed
             };
 
             room.CurrentPlayersConnection[hostId] = DateTime.UtcNow;

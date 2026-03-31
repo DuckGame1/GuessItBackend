@@ -80,13 +80,19 @@ namespace GuessItAPI.Controllers
         /// <param name="isFull">Фильтр по заполненности (необязательно).</param>
         /// <param name="name">Фильтр по названию комнаты (необязательно).</param>
         /// <param name="roomId">Фильтр по ID комнаты (необязательно).</param>
+        /// <param name="username">Фильтр по имени хоста (необязательно).</param>
         /// <returns>Список комнат, удовлетворяющий фильтрам.</returns>
         /// <response code="200">Список комнат успешно получен.</response>
         /// <response code="401">Пользователь не авторизован.</response>
         [HttpGet, Route("getrooms"), Authorize]
-        public IActionResult GetRooms(GameStatus? status = null, bool? isFull = null, string? name = null, string? roomId = null)
+        public async Task<IActionResult> GetRooms(GameStatus? status = null, bool? isFull = null, string? name = null, string? roomId = null, string? username = null)
         {
-            return Ok(_roomService.GetRooms(status, isFull, name, roomId));
+            User? user;
+            if (username != null)
+                user = await _userService.GetByUsername(username);
+            else
+                user = new User();
+            return Ok(new { rooms = _roomService.GetRooms(status, isFull, name, roomId, user.UserId) });
         }
 
         /// <summary>
@@ -275,7 +281,7 @@ namespace GuessItAPI.Controllers
 
             bool status = _roomService.ChangeTeam(roomId, user.UserId, team);
             if (status)
-                return Ok();
+                return Ok("Successfully changed team");
 
             return BadRequest("Unable to change team");
         }
@@ -291,9 +297,17 @@ namespace GuessItAPI.Controllers
         /// <response code="400">Пользователь не найден или операция невозможна.</response>
         /// <response code="401">Пользователь не авторизован.</response>
         [HttpPost, Route("hostchangeteam"), Authorize]
-        public IActionResult HostChangeTeam(string roomId, int userId, Teams team)
+        public async Task<IActionResult> HostChangeTeam(string roomId, int userId, Teams team)
         {
-            bool status = _roomService.HostChangeTeam(roomId, userId, team, out string result);
+            string? username = HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
+            if (string.IsNullOrEmpty(username))
+                return BadRequest("Current user not found");
+
+            User? user = await _userService.GetByUsername(username);
+            if (user == null)
+                return BadRequest("Current user not found");
+
+            bool status = _roomService.HostChangeTeam(roomId, user.UserId, userId, team, out string result);
             if (status)
                 return Ok(result);
             return BadRequest(result);
@@ -394,7 +408,7 @@ namespace GuessItAPI.Controllers
         /// <response code="400">Невозможно назначить PlayerId (например, комнаты нет, пользователь не в комнате, PlayerId занят и т.п.) — возвращается текст ошибки.</response>
         /// <response code="401">Пользователь не авторизован или не найден (claims/пользователь отсутствует).</response>
         [HttpPost, Route("assignplayerid"), Authorize]
-        public async Task<IActionResult> AssignPlayerId(string roomId, ulong unityPlayerId)
+        public async Task<IActionResult> AssignPlayerId(string roomId, int unityPlayerId)
         {
             string? username = HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
             if (string.IsNullOrEmpty(username))

@@ -19,9 +19,11 @@ namespace GuessItAPI.Services
         }
         public RoomInfo CreateRoom(int hostId, string roomName, int maxPlayers) => _roomstore.Create(hostId, roomName, maxPlayers);
         public void SendHeartbeat(string roomId, int userId) => _roomstore.HeartBeat(roomId, userId);
-        public List<RoomInfo> GetRooms(GameStatus? gameStatus = null, bool? isFull = false, string? name = null, string? roomId = null)
+        public List<RoomResponseModel> GetRooms(GameStatus? gameStatus = null, bool? isFull = false, string? name = null, string? roomId = null, int? hostId = 0)
         {
             var rooms = _roomstore.GetRooms().ToList();
+            var roomReturns = new List<RoomResponseModel>();
+
             if (gameStatus != null)
                 rooms = rooms.Where(r => r.Status == gameStatus).ToList();
             if(isFull == false)
@@ -29,10 +31,33 @@ namespace GuessItAPI.Services
             else if (isFull == true)
                 rooms = rooms.Where(r => r.CurrentPlayersConnection.Count >= r.MaxPlayers).ToList();
             if (!string.IsNullOrWhiteSpace(name))
-                rooms = rooms.Where(r => r.RoomName == name).ToList();
+                rooms = rooms.Where(r => r.RoomName.ToLower().Contains(name.ToLower())).ToList();
             if(!string.IsNullOrWhiteSpace(roomId))
                 rooms = rooms.Where(r => r.RoomId == roomId).ToList();
-            return rooms;
+            if (hostId.HasValue && hostId != 0)
+                rooms = rooms.Where(r => r.HostId == hostId).ToList();
+
+
+            rooms.ForEach(r =>
+            {
+                roomReturns.Add(new RoomResponseModel
+                {
+                    RoomId = r.RoomId,
+                    RoomName = r.RoomName,
+                    HostId = r.HostId,
+                    CategoryId = r.CategoryId,
+                    MaxPlayers = r.MaxPlayers,
+                    RoomPasswordHash = r.RoomPasswordHash,
+                    JoinCode = r.JoinCode,
+                    LastHeartbeat = r.LastHeartbeat,
+                    CurrentPlayersConnection = r.CurrentPlayersConnection.ToGeneric(),
+                    PlayersIdAssignment = r.PlayersIdAssignment.ToGeneric(),
+                    TeamAssignment = r.TeamAssignment.ToGeneric(),
+                    Status = r.Status
+                });
+            });
+
+            return roomReturns;
         }
         private bool? TryGetHostCheckedRoom(string roomId, int userId, out RoomInfo room)
         {
@@ -83,16 +108,24 @@ namespace GuessItAPI.Services
                 result = "Room doesn't exist";
                 return null;
             }
-            if(roomResult == true)
+            if (roomResult == true)
             {
                 result = "Host can't join room";
                 return null;
             }
-            if (!PasswordHasher.Verify(password, room.RoomPasswordHash))
+            if (string.IsNullOrEmpty(room.RoomPasswordHash) && string.IsNullOrEmpty(password))
+            {
+                return AddUserToRoom(room, userId, out result);
+            }
+            if (string.IsNullOrEmpty(password) || !PasswordHasher.Verify(password, room.RoomPasswordHash))
             {
                 result = "Incorrect password";
                 return null;
             }
+            return AddUserToRoom(room, userId, out result);
+        }
+        private JoinModel AddUserToRoom(RoomInfo room, int userId, out string result)
+        {
             if (room.CurrentPlayersConnection.Count < room.MaxPlayers ||
                 room.CurrentPlayersConnection.TryGetValue(userId, out _))
             {
@@ -113,7 +146,7 @@ namespace GuessItAPI.Services
             }
             return JoinRoom(room.RoomId, userId, password, out result);
         }
-        public bool AssignPlayerId(string roomId, int userId, ulong unityPlayerId, out string result)
+        public bool AssignPlayerId(string roomId, int userId, int unityPlayerId, out string result)
         {
             bool? roomResult = TryGetHostCheckedRoom(roomId, userId, out RoomInfo room);
             if (roomResult == null)
@@ -141,9 +174,9 @@ namespace GuessItAPI.Services
             room.TeamAssignment[userId] = team;
             return true;
         }
-        public bool HostChangeTeam(string roomId, int userId, Teams team, out string result)
+        public bool HostChangeTeam(string roomId, int hostId, int userId, Teams team, out string result)
         {
-            bool? roomStatus = TryGetHostCheckedRoom(roomId, userId, out RoomInfo room);
+            bool? roomStatus = TryGetHostCheckedRoom(roomId, hostId, out RoomInfo room);
             if (roomStatus == null)
             {
                 result = $"Unable to find room whith id {roomId}";

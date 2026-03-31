@@ -15,7 +15,7 @@ namespace GuessItAPI.Rooms
         public DateTime LastHeartbeat { get; set; } = DateTime.UtcNow;
 
         public ConcurrentDictionary<int, DateTime> CurrentPlayersConnection { get; } = new();
-        public ConcurrentDictionary<int, ulong> PlayersIdAssignment { get; } = new();
+        public ConcurrentDictionary<int, int> PlayersIdAssignment { get; } = new();
         public ConcurrentDictionary<int, Teams> TeamAssignment { get; } = new();
 
         public enum GameStatus { Open, InGame, Closed }

@@ -177,7 +177,7 @@
             <response code="400">Пользователь не найден.</response>
             <response code="401">Пользователь не авторизован.</response>
         </member>
-        <member name="M:GuessItAPI.Controllers.RoomController.GetRooms(System.Nullable{GuessItAPI.Rooms.RoomInfo.GameStatus},System.Nullable{System.Boolean},System.String,System.String)">
+        <member name="M:GuessItAPI.Controllers.RoomController.GetRooms(System.Nullable{GuessItAPI.Rooms.RoomInfo.GameStatus},System.Nullable{System.Boolean},System.String,System.String,System.String)">
             <summary>
             Возвращает список комнат с фильтрами.
             </summary>
@@ -185,6 +185,7 @@
             <param name="isFull">Фильтр по заполненности (необязательно).</param>
             <param name="name">Фильтр по названию комнаты (необязательно).</param>
             <param name="roomId">Фильтр по ID комнаты (необязательно).</param>
+            <param name="username">Фильтр по имени хоста (необязательно).</param>
             <returns>Список комнат, удовлетворяющий фильтрам.</returns>
             <response code="200">Список комнат успешно получен.</response>
             <response code="401">Пользователь не авторизован.</response>
@@ -312,7 +313,7 @@
             <response code="400">Пользователь не найден, код неверный, пароль неверный, комната не найдена/заполнена или вход невозможен (см. текст ошибки).</response>
             <response code="401">Пользователь не авторизован.</response>
         </member>
-        <member name="M:GuessItAPI.Controllers.RoomController.AssignPlayerId(System.String,System.UInt64)">
+        <member name="M:GuessItAPI.Controllers.RoomController.AssignPlayerId(System.String,System.Int32)">
             <summary>
             Привязывает Unity PlayerId (unityPlayerId) к текущему пользователю в указанной комнате.
             </summary>
