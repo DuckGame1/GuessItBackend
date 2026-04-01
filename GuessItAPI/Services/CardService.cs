@@ -40,13 +40,13 @@ namespace GuessItAPI.Services
             if (category == null)
                 return null;
 
-            category.CategoryImage = Array.Empty<byte>();
+            /*category.CategoryImage = Array.Empty<byte>();
 
             foreach (var card in category.Cards)
             {
                 card.CardImage = Array.Empty<byte>();
                 card.CardCategory = null;
-            }
+            }*/
 
             return category;
         }

@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\services\\cardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\cardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\services\\roomstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\roomstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\interfaces\\iroomstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,12 +19,8 @@
       "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\rooms\\roominfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\rooms\\roominfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\services\\roomstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\roomstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\models\\roomresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +31,16 @@
       "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\services\\cardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\cardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\services\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|c:\\users\\shelkon\\source\\repos\\guessitapi\\guessitapi\\rooms\\roominfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F850A97-56C8-4790-B5B7-D01A8BAE834B}|GuessItAPI\\GuessItAPI.csproj|solutionrelative:guessitapi\\rooms\\roominfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,24 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "CardService.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Services\\CardService.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Services\\CardService.cs",
               "ToolTip": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Services\\CardService.cs",
               "RelativeToolTip": "GuessItAPI\\Services\\CardService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAtwDAAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-23T19:59:21.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Services\\UserService.cs",
@@ -80,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "RoomResponseModel.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Models\\RoomResponseModel.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Models\\RoomResponseModel.cs",
@@ -93,20 +93,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "GuessItAPI\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAYwBsAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAowN8AAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T12:24:02.157Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "RoomInfo.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Rooms\\RoomInfo.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Rooms\\RoomInfo.cs",
@@ -114,25 +114,24 @@
               "RelativeToolTip": "GuessItAPI\\Rooms\\RoomInfo.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T12:21:31.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T12:21:31.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "GuessItAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAmwDcAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAcwDcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T14:48:30.832Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "IRoomStore.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Interfaces\\IRoomStore.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Interfaces\\IRoomStore.cs",
@@ -145,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RoomStore.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Services\\RoomStore.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Services\\RoomStore.cs",
@@ -158,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "RoomService.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Services\\RoomService.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Services\\RoomService.cs",
@@ -166,18 +165,17 @@
               "RelativeToolTip": "GuessItAPI\\Services\\RoomService.cs",
               "ViewState": "AgIAAK4AAAAAAAAAAAAtwMMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T14:15:47.001Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T14:15:47.001Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "RoomController.cs",
               "DocumentMoniker": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Controllers\\RoomController.cs",
               "RelativeDocumentMoniker": "GuessItAPI\\Controllers\\RoomController.cs",
               "ToolTip": "C:\\Users\\Shelkon\\source\\repos\\guessitapi\\GuessItAPI\\Controllers\\RoomController.cs",
               "RelativeToolTip": "GuessItAPI\\Controllers\\RoomController.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAA1wBoBAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoBAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-04T11:09:13.106Z",
               "EditorCaption": ""
