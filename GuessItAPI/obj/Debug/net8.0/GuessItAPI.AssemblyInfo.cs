@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GuessItAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+883f5a568c72de36f46e3a7ba35a96b8880e7599")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c992d50cf85286fe132fa93e0f8e875d2ab72e9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("GuessItAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GuessItAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

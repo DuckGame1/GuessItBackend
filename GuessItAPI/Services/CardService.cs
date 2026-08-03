@@ -36,19 +36,77 @@ namespace GuessItAPI.Services
 
         public async Task<CardsCategory?> GetCategoryWithCards(int categoryId)
         {
-            CardsCategory? category = await _dbContext.CardsCategories.Include(c => c.Cards).SingleOrDefaultAsync(c => c.CategoryId == categoryId);
-            if (category == null)
+            var categoryData = await _dbContext.CardsCategories
+                .AsNoTracking()
+                .Where(c => c.CategoryId == categoryId)
+                .Select(c => new
+                {
+                    CategoryId = c.CategoryId,
+                    CategoryName = c.CategoryName,
+                    CategoryOwnerId = c.CategoryOwnerId,
+                    CategoryDescription = c.CategoryDescription,
+                    Cards = c.Cards.Select(card => new
+                    {
+                        CardId = card.CardId,
+                        CardCategoryId = card.CardCategoryId,
+                        CardName = card.CardName,
+                        CardImagePreview = card.CardImagePreview
+                    }).ToList()
+                })
+                .SingleOrDefaultAsync();
+
+            if (categoryData == null)
                 return null;
 
-            /*category.CategoryImage = Array.Empty<byte>();
+            var cardsWithoutPreviewIds = categoryData.Cards
+                .Where(c => c.CardImagePreview == null || c.CardImagePreview.Length == 0)
+                .Select(c => c.CardId)
+                .ToList();
 
-            foreach (var card in category.Cards)
+            Dictionary<int, byte[]> generatedPreviews = new();
+
+            if (cardsWithoutPreviewIds.Count > 0)
             {
-                card.CardImage = Array.Empty<byte>();
-                card.CardCategory = null;
-            }*/
+                var cardsToUpdate = await _dbContext.Cards
+                    .Where(c => cardsWithoutPreviewIds.Contains(c.CardId))
+                    .ToListAsync();
 
-            return category;
+                bool changed = false;
+
+                foreach (var card in cardsToUpdate)
+                {
+                    if (card.CardImage != null && card.CardImage.Length > 0)
+                    {
+                        card.CardImagePreview = ImageHelper.ResizeImage(card.CardImage, 256);
+                        generatedPreviews[card.CardId] = card.CardImagePreview;
+                        changed = true;
+                    }
+                }
+
+                if (changed)
+                    await _dbContext.SaveChangesAsync();
+            }
+
+            var result = new CardsCategory
+            {
+                CategoryId = categoryData.CategoryId,
+                CategoryName = categoryData.CategoryName,
+                CategoryDescription = categoryData.CategoryDescription,
+                CategoryOwnerId = categoryData.CategoryOwnerId,
+                Cards = categoryData.Cards.Select(cardData => new Card
+                {
+                    CardId = cardData.CardId,
+                    CardCategoryId = cardData.CardCategoryId,
+                    CardName = cardData.CardName,
+                    CardImagePreview = (cardData.CardImagePreview != null && cardData.CardImagePreview.Length > 0)
+                        ? cardData.CardImagePreview
+                        : generatedPreviews.GetValueOrDefault(cardData.CardId),
+                    CardImage = null,
+                    CardCategory = null
+                }).ToList()
+            };
+
+            return result;
         }
 
         public async Task<List<CardsCategory>> GetAllCategoriesByOwner(int ownerId)
@@ -235,6 +293,7 @@ namespace GuessItAPI.Services
             Card card = new Card();
             card.CardCategory = category;
             card.CardImage = cardImage;
+            card.CardImagePreview = ImageHelper.ResizeImage(cardImage, 256);
             card.CardName = name;
             _dbContext.Cards.Add(card);
 
@@ -259,15 +318,37 @@ namespace GuessItAPI.Services
                 return false;
 
             card.CardImage = image;
+            card.CardImagePreview = ImageHelper.ResizeImage(image, 256);
             await _dbContext.SaveChangesAsync();
             return true;
         }
         public async Task<byte[]?> GetCardImage(int cardId)
         {
-            Card? card = await GetCard(cardId);
-            if (card == null)
-                return Array.Empty<byte>();
-            return card.CardImage;
+            var cardData = await _dbContext.Cards
+                .Where(c => c.CardId == cardId)
+                .Select(c => new
+                {
+                    c.CardId,
+                    c.CardImagePreview
+                })
+                .SingleOrDefaultAsync();
+
+            if (cardData == null)
+                return null;
+
+            if (cardData.CardImagePreview != null && cardData.CardImagePreview.Length > 0)
+                return cardData.CardImagePreview;
+
+            var card = await _dbContext.Cards
+                .SingleOrDefaultAsync(c => c.CardId == cardId);
+
+            if (card == null || card.CardImage == null || card.CardImage.Length == 0)
+                return null;
+
+            card.CardImagePreview = ImageHelper.ResizeImage(card.CardImage, 256);
+            await _dbContext.SaveChangesAsync();
+
+            return card.CardImagePreview;
         }
         public async Task<bool> DeleteCard(int cardId)
         {

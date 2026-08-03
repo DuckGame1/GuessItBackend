@@ -29,7 +29,7 @@ public partial class GuessItDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=antishelkon.ru;port=3306;user=GuessItAPI;password=adminsky;database=GuessItDb", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.42-mysql"));
+        => optionsBuilder.UseMySql("server=antishelkon.ru;port=3306;user=GuessItAPI;password=adminsky;database=GuessItDb", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.43-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,6 +44,7 @@ public partial class GuessItDbContext : DbContext
             entity.HasIndex(e => e.CardCategoryId, "CardCategoryId");
 
             entity.Property(e => e.CardImage).HasColumnType("mediumblob");
+            entity.Property(e => e.CardImagePreview).HasColumnType("blob");
             entity.Property(e => e.CardName).HasMaxLength(64);
 
             entity.HasOne(d => d.CardCategory).WithMany(p => p.Cards)

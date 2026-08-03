@@ -177,7 +177,7 @@
             <response code="400">Пользователь не найден.</response>
             <response code="401">Пользователь не авторизован.</response>
         </member>
-        <member name="M:GuessItAPI.Controllers.RoomController.GetRooms(System.Nullable{GuessItAPI.Rooms.RoomInfo.GameStatus},System.Nullable{System.Boolean},System.String,System.String)">
+        <member name="M:GuessItAPI.Controllers.RoomController.GetRooms(System.Nullable{GuessItAPI.Rooms.RoomInfo.GameStatus},System.Nullable{System.Boolean},System.String,System.String,System.String)">
             <summary>
             Возвращает список комнат с фильтрами.
             </summary>
@@ -185,6 +185,7 @@
             <param name="isFull">Фильтр по заполненности (необязательно).</param>
             <param name="name">Фильтр по названию комнаты (необязательно).</param>
             <param name="roomId">Фильтр по ID комнаты (необязательно).</param>
+            <param name="username">Фильтр по имени хоста (необязательно).</param>
             <returns>Список комнат, удовлетворяющий фильтрам.</returns>
             <response code="200">Список комнат успешно получен.</response>
             <response code="401">Пользователь не авторизован.</response>
@@ -265,6 +266,18 @@
             <response code="400">Пользователь не найден или операция невозможна.</response>
             <response code="401">Пользователь не авторизован.</response>
         </member>
+        <member name="M:GuessItAPI.Controllers.RoomController.HostChangeTeam(System.String,System.Int32,GuessItAPI.Rooms.RoomInfo.Teams)">
+            <summary>
+            Меняет команду пользователя в комнате.
+            </summary>
+            <param name="roomId">ID комнаты.</param>
+            <param name="userId">Пользователь, который переходит в команду.</param>
+            <param name="team">Команда, в которую переходит пользователь.</param>
+            <returns>OK если команда изменена.</returns>
+            <response code="200">Команда изменена.</response>
+            <response code="400">Пользователь не найден или операция невозможна.</response>
+            <response code="401">Пользователь не авторизован.</response>
+        </member>
         <member name="M:GuessItAPI.Controllers.RoomController.SetGameStatus(System.String,GuessItAPI.Rooms.RoomInfo.GameStatus)">
             <summary>
             Устанавливает статус игры/комнаты (обычно только хост).
@@ -286,6 +299,34 @@
             <response code="200">Пользователь присоединился к комнате.</response>
             <response code="400">Пользователь не найден, комната заполнена/не существует или пароль неверный.</response>
             <response code="401">Пользователь не авторизован.</response>
+        </member>
+        <member name="M:GuessItAPI.Controllers.RoomController.JoinRoomWithCode(System.String,System.String)">
+            <summary>
+            Присоединяет текущего пользователя к комнате по коду подключения (joinCode) и паролю.
+            </summary>
+            <param name="joinCode">Код подключения к комнате (join code), выданный хостом/Relay.</param>
+            <param name="password">Пароль комнаты (если установлен). По умолчанию пустая строка.</param>
+            <returns>
+            Модель входа (<see cref="T:GuessItAPI.Models.JoinModel"/>) при успешном подключении.
+            </returns>
+            <response code="200">Пользователь успешно присоединился к комнате.</response>
+            <response code="400">Пользователь не найден, код неверный, пароль неверный, комната не найдена/заполнена или вход невозможен (см. текст ошибки).</response>
+            <response code="401">Пользователь не авторизован.</response>
+        </member>
+        <member name="M:GuessItAPI.Controllers.RoomController.AssignPlayerId(System.String,System.Int32)">
+            <summary>
+            Привязывает Unity PlayerId (unityPlayerId) к текущему пользователю в указанной комнате.
+            </summary>
+            <remarks>
+            Используется для сопоставления пользователя из API (UserId) с идентификатором игрока внутри Unity-сессии.
+            Текущий пользователь определяется по JWT/claims.
+            </remarks>
+            <param name="roomId">ID комнаты, в которой нужно назначить PlayerId.</param>
+            <param name="unityPlayerId">Идентификатор игрока в Unity (например, локальный ID/слот игрока).</param>
+            <returns>Строковый результат/лог операции.</returns>
+            <response code="200">PlayerId успешно назначен — возвращается текст результата.</response>
+            <response code="400">Невозможно назначить PlayerId (например, комнаты нет, пользователь не в комнате, PlayerId занят и т.п.) — возвращается текст ошибки.</response>
+            <response code="401">Пользователь не авторизован или не найден (claims/пользователь отсутствует).</response>
         </member>
         <member name="M:GuessItAPI.Controllers.RoomController.DeleteRoom(System.String)">
             <summary>

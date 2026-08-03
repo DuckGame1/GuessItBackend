@@ -279,3 +279,4 @@ C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rpswa.dsw
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rjimswa.dswa.cache.json
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Release\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\bin\Release\net8.0\SixLabors.ImageSharp.dll

@@ -24,7 +24,7 @@ namespace GuessItAPI.Controllers
         /// <param name="categoryId">Id категории</param>
         /// <param name="cardName">Имя карты</param>
         /// <returns>Id созданной карты при успехе, иначе код ошибки (BadRequest)</returns>
-        [HttpPost, Route("create"), Authorize, RequestSizeLimit(15_000_000)]
+        [HttpPost, Route("create"), Authorize, RequestSizeLimit(5_000_000)]
         public async Task<ActionResult<int>> CreateCard(int categoryId, string? cardName = null)
         {
             if (!cardName.IsNullOrEmpty() && cardName.Length > 63)
@@ -86,7 +86,7 @@ namespace GuessItAPI.Controllers
         /// Меняет картинку карты. Требует форму
         /// </summary>
         /// <param name="cardId">id карты</param>
-        [HttpPatch, Route("change/image"), Authorize, RequestSizeLimit(15_000_000)]
+        [HttpPatch, Route("change/image"), Authorize, RequestSizeLimit(5_000_000)]
         public async Task<ActionResult> ChangeCardImage(int cardId)
         {
             Card? card = await _cardService.GetCard(cardId);

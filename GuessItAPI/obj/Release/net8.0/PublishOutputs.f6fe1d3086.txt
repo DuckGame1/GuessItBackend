@@ -35,6 +35,7 @@ C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Ou
 C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\MySqlConnector.dll
 C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\SixLabors.ImageSharp.dll
 C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

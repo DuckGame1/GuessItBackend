@@ -13,5 +13,7 @@ public partial class Card
 
     public byte[] CardImage { get; set; } = null!;
 
+    public byte[]? CardImagePreview { get; set; }
+
     public virtual CardsCategory CardCategory { get; set; } = null!;
 }

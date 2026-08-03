@@ -279,3 +279,4 @@ C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Debug\net8.0\rjimswa.dsw
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
 C:\Users\Shelkon\source\repos\GuessItAPI\GuessItAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Shelkon\source\repos\guessitapi\GuessItAPI\bin\Debug\net8.0\SixLabors.ImageSharp.dll
